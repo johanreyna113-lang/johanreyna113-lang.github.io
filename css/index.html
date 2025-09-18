@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio OG</title>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link rel="shortcut icon" href="images/letra-j.png" type="image/x-icon">
+
+  <!-- ===== CSS DIRECTO ===== -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    :root{
+      --body-color:rgb(250, 250, 250);
+      --color-white: rgb(255, 255, 255);
+      --btn-gris:#8c8c91;
+      --text-color-second:rgb(68, 68, 68);
+      --text-color-gris:#0e0e9d;
+      --frist-color:#0e0e9d;
+      --frist-color-hover:#cacad1;
+      --second-color:#0e0e9d;
+      --third-color:#8c8c91;
+      --frist-shadow-color: rgba(66, 64, 64, 0.1);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--body-color);}
+    /* Scroll bar */
+    ::-webkit-scrollbar-track{background:#f1f1f1;}
+    ::-webkit-scrollbar-thumb{background:#ccc;border-radius:30px;}
+    ::-webkit-scrollbar-thumb:hover{background:#bbb;}
+    /* Botones */
+    .btn{font-weight:500;padding:12px 20px;background:var(--btn-gris);border:none;border-radius:10px;cursor:pointer;transition:.4s;}
+    .btn:hover{background:var(--second-color);color:var(--color-white);}
+    .btn1{font-weight:500;padding:12px 20px;background:var(--second-color);color:var(--color-white);border:none;border-radius:10px;cursor:pointer;transition:.4s;}
+    .btn1:hover{background:var(--btn-gris);color:var(--color-white);}
+    i{font-size:16px;}
+    .container{width:100%;position:relative;}
+    /* Navbar */
+    nav{position:fixed;display:flex;justify-content:space-between;width:100%;height:90px;line-height:90px;background:var(--body-color);padding-inline:9vw;z-index:100;transition:.3s;}
+    nav a:hover{color:var(--frist-color);}
+    .nav-logo{position:relative;}
+    .nav-name{font-size:30px;font-weight:600;color:var(--text-color-gris);}
+    .nav-logo span{position:absolute;top:-15px;right:-20px;font-size:5em;color:var(--text-color-second);}
+    .nav-menu,.nav_menu_list{display:flex;}
+    .nav-menu .nav_list{list-style:none;}
+    .nav-link{text-decoration:none;color:var(--text-color-second);font-weight:500;padding-inline:15px;margin-inline:20px;}
+    .nav-menu-btn{display:none;}
+    .nav-menu-btn i{font-size:28px;cursor:pointer;}
+    /* Wrapper */
+    .wrapper{padding-inline:10vw;}
+    .featured-box{display:flex;height:100vh;min-height:700px;}
+    .featured-text{display:flex;flex-direction:column;justify-content:center;width:50%;padding-left:20px;}
+    .featured-text-card span{background:var(--third-color);color:var(--color-white);padding:3px 8px;font-size:12px;border-radius:5px;}
+    .featured-name{font-size:50px;font-weight:600;color:var(--text-color-second);margin-block:20px;}
+    .typedText{text-transform:capitalize;color:var(--text-color-gris);}
+    .featured-text-info{font-size:15px;margin-bottom:30px;color:var(--text-color-second);}
+    .featured-text-btn{display:flex;gap:20px;}
+    .featured-text-btn>.blue-btn{background:var(--frist-color);color:var(--color-white);}
+    .featured-text-btn>.blue-btn:hover{background:var(--frist-color-hover);}
+    .featured-image{display:flex;justify-content:right;width:60%;}
+    .image{margin:auto 0;width:350px;height:400px;border-radius:55% 45% 55% 45%;overflow:hidden;animation:imgFloat 7s ease-in-out infinite;}
+    .image img{width:350px;height:400px;object-fit:cover;}
+    @keyframes imgFloat{50%{transform:translateY(10px);border-radius:45% 55% 45% 55%;}}
+    /* About */
+    .section{padding:20px 20px;}
+    .top-header{text-align:center;margin-bottom:40px;}
+    .top-header h1{color:var(--frist-color);}
+    .row{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;}
+    .col{flex:1 1 400px;max-width:600px;}
+    .about-info{display:flex;flex-direction:column;align-items:center;padding:30px 20px 70px;background:var(--color-white);box-shadow:1px 8px 10px 2px var(--frist-shadow-color);border-radius:20px;}
+    .about-info p{text-align:center;font-size:15px;color:#777;}
+    .skills-box{margin:20px 0;}
+    .skills-header{margin-bottom:10px;}
+    .skills-list{display:flex;flex-wrap:wrap;gap:8px;}
+    .skills-list span{font-size:14px;background:var(--frist-color);color:var(--color-white);padding:6px 12px;border-radius:5px;}
+    /* Education */
+    .education-section{margin-top:80px;padding-top:80px;}
+    .education-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;}
+    .education-item{background:#fff;padding:20px;border-radius:10px;max-width:350px;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+    .education-icon{background:var(--frist-color);color:#fff;padding:15px;border-radius:50%;font-size:2em;margin-bottom:15px;text-align:center;}
+    .education-info h4{font-size:1.5em;margin-bottom:5px;color:#333;}
+    .education-info p{font-size:1em;color:#777;margin:5px 0;}
+    .education-info .institution{font-weight:bold;color:#555;}
+    .education-info .dates{font-style:italic;color:#555;}
+    /* Projects */
+    .projects{background:var(--body-color);padding:70px;}
+    .projects-section h2{text-align:center;color:var(--frist-color);margin-bottom:40px;}
+    .project-row{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;}
+    .slider{max-width:600px;height:350px;overflow:hidden;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);background:#fff;display:flex;align-items:center;justify-content:center;}
+    .slide-track{display:flex;height:100%;}
+    .slider img{flex:0 0 100%;max-width:100%;max-height:100%;object-fit:contain;}
+    .slider-2 .slide-track{width:200%;animation:slide-2 6s infinite;}
+    .slider-3 .slide-track{width:300%;animation:slide-3 9s infinite;}
+    @keyframes slide-2{0%,40%{transform:translateX(0%);}50%,90%{transform:translateX(-100%);}100%{transform:translateX(0%);}}
+    @keyframes slide-3{0%,30%{transform:translateX(0%);}33%,63%{transform:translateX(-100%);}66%,97%{transform:translateX(-200%);}100%{transform:translateX(0%);}}
+    /* Responsive */
+    @media(max-width:900px){
+      .nav-button{display:none;}
+      .nav-menu{position:fixed;top:80px;left:100%;flex-direction:column;align-items:center;background:rgba(255,255,255,0.7);backdrop-filter:blur(20px);width:100%;height:90vh;transition:.3s;}
+      .nav-menu.responsive{left:0;}
+      .nav_menu_list{flex-direction:column;}
+      .nav-menu-btn{display:flex;}
+      .featured-box{flex-direction:column;}
+      .featured-text{width:100%;order:2;min-height:60vh;}
+      .featured-image{order:1;justify-content:center;width:100%;margin-top:65px;}
+      .image,.image img{width:170px;height:170px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav id="header">
+      <div class="nav-logo"><p class="nav-name">Johan R</p><span>.</span></div>
+      <div class="nav-menu" id="myNavMenu">
+        <ul class="nav_menu_list">
+          <li class="nav_list"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav_list"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav_list"><a href="#projects" class="nav-link">Projects</a></li>
+        </ul>
+      </div>
+      <div class="nav-button"><button class="btn1" id="downloadButton">Descargar CV <i class="uil uil-file-alt"></i></button></div>
+      <div class="nav-menu-btn"><i class="uil uil-bars" onclick="myMenuFunction()"></i></div>
+    </nav>
+
+    <!-- Main -->
+    <main class="wrapper">
+      <!-- Featured -->
+      <section class="featured-box" id="home">
+        <div class="featured-text">
+          <div class="featured-text-card"><span>Johan Reyna</span></div>
+          <div class="featured-name"><p>I'm <span class="typedText">Developer</span></p></div>
+          <div class="featured-text-info"><p>Enfocado en frontend, apasionado en desarrollar apps y paginas web de manera creativa.</p></div>
+          <div class="featured-text-btn">
+            <button class="btn blue-btn"><a href="#about" style="color:inherit;text-decoration:none;">Sobre mi</a></button>
+            <div class="nav-button"><button class="btn" id="downloadButton2">Descargar CV <i class="uil uil-file-alt"></i></button></div>
+          </div>
+        </div>
+        <div class="featured-image"><div class="image"><img src="images/PIC me.jpeg" alt="Perfil"></div></div>
+      </section>
+
+      <!-- About -->
+      <section class="section" id="about">
+        <div class="top-header"><h1>SOBRE MI</h1></div>
+        <div class="row">
+          <div class="col"><div class="about-info"><h3>Mi introduccion</h3><p>Desarrollador frontend apasionado por crear páginas web y aplicaciones creativas.</p></div></div>
+          <div class="col">
+            <div class="skills-box"><div class="skills-header"><h3>Frontend</h3></div><div class="skills-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Figma</span><span>Canva</span></div></div>
+            <div class="skills-box"><div class="skills-header"><h3>Backend</h3></div><div class="skills-list"><span>PHP</span><span>JAVA</span><span>C#</span><span>Python</span><span>Postman</span></div></div>
+            <div class="skills-box"><div class="skills-header"><h3>Database</h3></div><div class="skills-list"><span>SQL Server</span><span>Oracle</span><span>MongoDB</span><span>MySql</span></div></div>
+          </div>
+        </div>
+        <div class="education-section">
+          <div class="education-container">
+            <div class="education-item"><div class="education-icon"><i class="fas fa-graduation-cap"></i></div><div class="education-info"><h4>Tecnico Administrador BD</h4><p class="institution">Preparatoria Politecnica - UDEM</p><p class="dates">2019 - 2022</p></div></div>
+            <div class="education-item"><div class="education-icon"><i class="fas fa-certificate"></i></div><div class="education-info"><h4>TSU TI</h4><p class="institution">UT Santa Catarina</p><p class="dates">2022-2024</p></div></div>
+            <div class="education-item"><div class="education-icon"><i class="fas fa-laptop-code"></i></div><div class="education-info"><h4>Ingenieria en Software</h4><p class="institution">UT Santa Catarina</p><p class="dates">2024 - en curso</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="projects" id="projects">
+        <div class="projects-section">
+          <h2>PROYECTOS/TRABAJOS</h2>
+          <div class="project-row">
+            <div class="proyecto-bloque"><div class="slider slider-3"><div class="slide-track"><img src="images/ATO.png"><img src="images/ato2.png"><img src="images/ATO4.png"></div></div></div>
+            <div class="proyecto-bloque"><div class="slider slider-2"><div class="slide-track"><img src="images/accesdog.png"><img src="images/accesdog2.png"></div></div></div>
+          </div>
+          <div class="project-row">
+            <div class="proyecto-bloque"><div class="slider slider-1"><div class="slide-track"><img src="images/suitcase.png"></div></div></div>
+            <div class="proyecto-bloque"><div class="slider slider-3"><div class="slide-track"><img src="images/papeleria.png"><img src="images/papeleria 3.png"><img src="images/papeleria commerce.png"></div></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    function myMenuFunction(){
+      var menuBtn=document.getElementById("myNavMenu");
+      if(menuBtn.className==="nav-menu"){menuBtn.className+=" responsive";}else{menuBtn.className="nav-menu";}
+    }
+    window.onscroll=function(){headerShadow()};
+    function headerShadow(){const navHeader=document.getElementById("header");if(document.body.scrollTop>50||document.documentElement.scrollTop>50){navHeader.style.boxShadow="0 1px 6px rgba(0,0,0,0.1)";navHeader.style.height="70px";}else{navHeader.style.boxShadow="none";navHeader.style.height="90px";}}
+    document.getElementById('downloadButton').addEventListener('click',function(){const link=document.createElement('a');link.href='images/CV_Ftd_Johan_Reyna.pdf';link.download='CV_Ftd_Johan_Reyna.pdf';link.click();});
+    document.getElementById('downloadButton2').addEventListener('click',function(){const link=document.createElement('a');link.href='images/CV_Ftd_Johan_Reyna.pdf';link.download='CV_Ftd_Johan_Reyna.pdf';link.click();});
+    new Typed(".typedText",{strings:["Developer","Frontend","Fullstack"],typeSpeed:100,backSpeed:60,loop:true});
+  </script>
+</body>
+</html>
